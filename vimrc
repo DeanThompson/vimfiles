@@ -4,7 +4,7 @@ set nocompatible
 filetype off
 
 " Use Vundle to manage plugins
-set rtp+=~/.vim/bundle/vundle
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 source ~/.vim/vimrc.bundles
 call vundle#end()
@@ -36,7 +36,9 @@ set background=dark
 
 " Color settings
 set t_Co=256
-color tir_black
+" color tir_black
+color inkpot
+" color desert
 set cursorline
 
 " JQuery syntax support
@@ -58,12 +60,18 @@ set showmatch       " Show matching brackets.
 set smartcase       " Do smart case matching
 set incsearch       " Incremental search
 set ignorecase      " Do case insensitive matching
+set hlsearch        " Highlight matches with last search pattern
+highlight Search ctermbg=red
+highlight Search ctermfg=white
 
 " Status
 set showcmd         " Show (partial) command in status line.
 set laststatus=2    " Always show status bar 
 set ruler           " Show cursor position
 set number          " Show line number
+
+" Highlight right margin
+set colorcolumn=80
 
 " Indentation
 set autoindent
@@ -173,5 +181,3 @@ command QA qa
 " Nginx syntax highlighting
 autocmd BufNew,BufRead,BufNewFile,BufEnter /etc/nginx/*,/usr/local/nginx/*,/usr/local/etc/nginx/* setfiletype nginx
 
-" Slim syntax highlighting
-autocmd BufNew,BufRead,BufNewFile,BufEnter *.slim setfiletype slim
